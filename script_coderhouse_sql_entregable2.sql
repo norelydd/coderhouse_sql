@@ -9,7 +9,11 @@
 
 /* 1. CREACION DE BASE DE DATOS*/
 
-CREATE DATABASE IF NOT EXISTS coderhouse;
+CREATE DATABASE coderhouse
+    WITH OWNER = postgres
+    ENCODING = 'UTF8'
+    TEMPLATE = template0
+    CONNECTION LIMIT = -1;
 
 
 CREATE SCHEMA IF NOT EXISTS retail_project;
