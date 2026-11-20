@@ -1,14 +1,19 @@
-/* Script de análisis avanzado con Window Functions
+/* Análisis avanzado con Window Functions
  * ===============================================
- * Coderhouse
- * Curso: SQL Comisión #93635
- * Estudiante: Norely Diaz
- * Entregable 5
- */
+ * Coderhouse  * Curso: SQL Comisión #93635 * Entregable 5
+ * Norely Diaz 
+*/
 
-CREATE DATABASE retail_project;
+/*1. CREACION DE BASE DE DATOS*/
+--nota: Conectado a postgres (Auto-commit)
 
--- Conectarse a la nueva base de datos
+CREATE DATABASE retail_project
+    WITH OWNER = postgres
+    ENCODING = 'UTF8'
+    TEMPLATE = template0
+    CONNECTION LIMIT = -1;
+
+-- Conectarse a la nueva base de datos ( **En `psql`:** ejecuta el script completo)
 \c retail_project;
 
 /*2. CREACION DE TABLAS: Clientes, Categorias, Productos, Ventas*/
@@ -74,7 +79,6 @@ CREATE TABLE ventas (
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 );
-
 
 /* 3. CARGA DE DATOS*/
 
